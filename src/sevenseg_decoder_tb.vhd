@@ -57,6 +57,14 @@ begin
             
             w_hex <= x"0"; wait for 10 ns;
                 assert (w_seg_n = "1000000") report "bad with 0" severity failure;
+             w_hex <= x"1"; wait for 10 ns;
+                assert (w_seg_n = "1111001") report "bad with 1" severity failure;
+             w_hex <= x"A"; wait for 10 ns;
+                assert (w_seg_n = "0001000") report "bad with A" severity failure;
+             w_hex <= x"8"; wait for 10 ns;
+                assert (w_seg_n = "0000000") report "bad with 0" severity failure;
+             w_hex <= x"F"; wait for 10 ns;
+                assert (w_seg_n = "0001110") report "bad with F" severity failure;
 
             wait;
         end process;
